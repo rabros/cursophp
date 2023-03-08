@@ -12,4 +12,4 @@
         phpinfo()
     ?>
 </body>
-</html>
+</html> 
