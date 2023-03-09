@@ -10,4 +10,8 @@
 
     //$NomeCompletoALuno = "Came Case"
     //%nome_completo_aluno = "Snake Case"
+    
+    //TIPOS DE DADOS
+
+    //string - number (interger, float(double)) - boolean - arrays - object - null
 ?>
