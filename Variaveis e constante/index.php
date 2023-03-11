@@ -30,10 +30,10 @@
     // var_dump($vet) // array
     
     //object
-    class Pessoa {
-        private string $nome;
-    }
+    // class Pessoa {
+    //     private string $nome;
+    // }
 
-    $p = new Pessoa;
-    var_dump($p);
+    // $p = new Pessoa;
+    // var_dump($p);
 ?>
