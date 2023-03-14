@@ -1,4 +1,13 @@
-<?php 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vairiaveis e operações MATH</title>
+</head>
+<body>
+   <?php 
     $nome = "Cézar";
     $sobrenome = "Barros";
     const PAIS = "Brasil"; // constante 
@@ -36,4 +45,22 @@
 
     // $p = new Pessoa;
     // var_dump($p);
-?>
+    
+    ?>
+    <br>
+    <form action="index.php" method="get">
+        <label for="number">Numero</label>
+        <input type="number" name="number" id="idnumber">
+    </form>    
+        
+    <?php
+    $number = $_GET["number"] ?? "";
+    $multiplicacao = "$number" + 1;
+    $soma = 1 + 1;
+    $exp = 2 ** 3;
+    echo "$soma , $exp, $number, $multiplicacao";
+?> 
+</body>
+</html>
+
+
