@@ -54,13 +54,16 @@
     </form>    
         
     <?php
-    $number = $_GET["number"] ?? "";
+    $number = $_GET["number"] ?? "0";
     $multiplicacao = "$number" + 1;
     $soma = 1 + 1;
     $exp = 2 ** 3;
-    echo "$soma , $exp, $number, $multiplicacao";
+    echo nl2br("$soma , \n $exp, \n$number, \n$multiplicacao"); // nl2br esse comando faz que reconheca a tag \n por exemplo para pular linha
 ?> 
 </body>
 </html>
 
+<?php 
+    echo "joao \n barros"
+?>
 
