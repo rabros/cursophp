@@ -13,9 +13,9 @@
             <p><b>Sorteador de numeros</b></p>
         </header>
         <?php
-            echo nl2br("Gerando um número aleatório entre 0 e 100... \nO valor gerado foi ") . rand(0, 100); // Falta dar função do botao pra sortear.
+            echo "Gerando um número aleatório entre 0 e 100... <br>O valor gerado foi " . rand(0, 100); // Falta dar função do botao pra sortear.
         ?>
-        <button>Gerar novo</button>
+        <button onclick="javascript:.window.location.href'desafio02.php'">&#x1F504; Gerar novo</button>
     </main>    
 </body>
 </html>
