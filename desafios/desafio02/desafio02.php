@@ -15,7 +15,7 @@
         <?php
             echo "Gerando um número aleatório entre 0 e 100... <br>O valor gerado foi " . rand(0, 100); // Falta dar função do botao pra sortear.
         ?>
-        <button onclick="javascript:.window.location.href'desafio02.php'">&#x1F504; Gerar novo</button>
+        <button>&#x1F504; Gerar novo</button>
     </main>    
 </body>
 </html>
