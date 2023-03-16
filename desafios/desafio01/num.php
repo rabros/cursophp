@@ -15,9 +15,11 @@
                 $number = $_GET["number"];
                 $antecessor = ($number) - 1;
                 $sucessor = ($number) + 1;
-                echo nl2br("Foi digitado: $number \nSeu antecessor é: $antecessor; \nSeu sucessor é $sucessor.")
+                echo "Foi digitado: <strong>$number</strong>";
+                echo "<br>Seu <em>antecessor</em> é: $antecessor";
+                echo "<br>Seu <em>sucessor</em> é $sucessor";
              ?>
-             <button><a href="javascript:history.go(-1)"> Voltar</a></button>
+             <button><a href="javascript:history.go(-1)"> &#x2B05; Voltar</a></button>
      </main>    
 </body>
 </html>
