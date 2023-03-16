@@ -22,8 +22,9 @@
             //Verificar também para deixar colocar numero real
             // var_dump($ultimaCotacao);
             $valorConvertido = number_format(("$number" / "$ultimaCotacao"), 2);
-            echo "$valorConvertido";
+            echo "U$$ $valorConvertido";
         ?>
+        <p>Valor da cotação pego do <strong>Banco Central</strong></p>
         <button><a href="javascript:history.go(-1)">Voltar</a></button>
     </main>  
 </body>
