@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Resultado Desafio 4</title>
+    
+</head>
+<body>
+    <main>
+        <h1>Conversor de Moedas v2.0</h1>
+        <?php
+            $number = $_GET["number"];
+            $url = "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial='03-09-2023'&@dataFinalCotacao='03-15-2023'&top=100&format=json";
+            $cotacao = json_decode(file_get_contents($url));
+            // var_dump($cotacao);            
+            foreach($cotacao->value as $valor){
+                $ultimaCotacao = $valor->cotacaoVenda;//PEGAR A ULTIMA COTAÇÃO PARA FAZER O CALCULO E COM O FAZER O CALCULO            
+            }
+            //Verificar também para deixar colocar numero real
+            // var_dump($ultimaCotacao);
+            $valorConvertido = number_format(("$number" / "$ultimaCotacao"), 2);
+            echo "$valorConvertido";
+        ?>
+        <button><a href="javascript:history.go(-1)">Voltar</a></button>
+    </main>  
+</body>
+</html>
