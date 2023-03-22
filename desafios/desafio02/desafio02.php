@@ -13,9 +13,9 @@
             <p><b>Sorteador de numeros</b></p>
         </header>
         <?php
-            echo "Gerando um número aleatório entre 0 e 100... <br>O valor gerado foi " . rand(0, 100); // Falta dar função do botao pra sortear.
+            echo <p>"Gerando um número aleatório entre 0 e 100... <br>O valor gerado foi " . rand(0, 100);</p> // Falta dar função do botao pra sortear.
         ?>
-        <button>&#x1F504; Gerar novo</button>
+        <button onclick:javascript.document.location.reload()>&#x1F504; Gerar novo</button>
     </main>    
 </body>
 </html>
