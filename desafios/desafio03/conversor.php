@@ -11,13 +11,15 @@
     <main>
         <h1>Conversor de Moedas v1.0</h1>
         <?php
-        $number = $_GET["number"];
-        $resultadoConversao = number_format(("$number") / 5.28, 2);
-        echo "Seus R$ $number equivalem a U$$ <b>$resultadoConversao<b>";
-        // Falta deixar o $number aceitar em numero decimal
+        $cotacao = 5.28;
+        $number = $_GET["number"] ?? 0;
+        // $conversao = number_format(("$number") / 5.28, 2);
+        $conversao = $number / $cotacao;
+        $padrao = numftm_create("pt_BR", number_format::CURRENCY);
+        echo "<p>Seus " . numfmt_format_currency($padrao, $number, "BRL") . " equivalem a <strong>" . numfmt_format_currency($padrao, $conversao, "USD") . "<strong></p>";
         ?>
-        <p> <strong>Cotação fixa de R$5.27</strong> informada direto no codigo</p> 
+        <p><strong>Cotação fixa de R$5.27</strong> informada direto no codigo</p> 
         <button><a href="javascript:history.go(-1)">Voltar</a></button>
-    </main>  
+    </main>
 </body>
 </html>
