@@ -16,7 +16,7 @@
         // $conversao = number_format(("$number") / 5.28, 2);
         $conversao = $number / $cotacao;
         $padrao = numftm_create("pt_BR", number_format::CURRENCY);
-        echo "<p>Seus " . numfmt_format_currency($padrao, $number, "BRL") . " equivalem a <strong>" . numfmt_format_currency($padrao, $conversao, "USD") . "<strong></p>";
+        echo "<p>Seus " . numfmt_format_currency($padrao, $number, "BRL") . " equivalem a <strong>" . numfmt_format_currency($padrao, $conversao, "USD") . "</strong></p>";
         ?>
         <p><strong>Cotação fixa de R$5.27</strong> informada direto no codigo</p> 
         <button><a href="javascript:history.go(-1)">Voltar</a></button>
