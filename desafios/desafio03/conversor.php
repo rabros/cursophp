@@ -13,9 +13,9 @@
         <?php
         $cotacao = 5.28;
         $number = $_GET["number"] ?? 0;
+        $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
         // $conversao = number_format(("$number") / 5.28, 2);
-        $conversao = $number / $cotacao;
-        $padrao = numftm_create("pt_BR", number_format::CURRENCY);
+        $conversao = $number / $cotacao;        
         echo "<p>Seus " . numfmt_format_currency($padrao, $number, "BRL") . " equivalem a <strong>" . numfmt_format_currency($padrao, $conversao, "USD") . "</strong></p>";
         ?>
         <p><strong>Cotação fixa de R$5.27</strong> informada direto no codigo</p> 

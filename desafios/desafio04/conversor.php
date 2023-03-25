@@ -16,7 +16,7 @@
             $number = $_GET["number"] ?? 0;
             $url = "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial='03-09-2023'&@dataFinalCotacao='03-15-2023'&top=100&format=json";
             $cotacao = json_decode(file_get_contents($url));
-            $padrao = numfmt_create("pt_BR", number_format::CURRENCY);
+            $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
             // var_dump($cotacao);            
             foreach($cotacao->value as $valor){
                 $ultimaCotacao = $valor->cotacaoVenda;//PEGAR A ULTIMA COTAÇÃO PARA FAZER O CALCULO E COM O FAZER O CALCULO            
@@ -24,10 +24,10 @@
             // var_dump($ultimaCotacao);
             $conversao = $number / $ultimaCotacao;
             // $valorConvertido = number_format(("$number" / "$ultimaCotacao"), 2);
-            echo "<p>Seus " . numfmt_format_currency($padrao, $number, "BRL") . "equivalem a <strong>" . numfmt_format_currency($padrao, $conversao, "USD") . "</strong></p>";
+            echo "<p>Seus " . numfmt_format_currency($padrao, $number, "BRL") . " equivalem a <strong>" . numfmt_format_currency($padrao, $conversao, "USD") . "</strong></p>";
         ?>
         <p>Valor da cotação pego do <strong>Banco Central</strong></p>
-        <button><a href="javascript:history.go(-1)">Voltar</a></button>
+        <button onclick="javascript:history.go(-1)">Voltar</button>
     </main>  
 </body>
 </html>
