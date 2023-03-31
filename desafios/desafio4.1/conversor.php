@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor 2.0</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
    <main>
     <?php
-        $inicio = date("m-d-Y");
+        $inicio = date("m-d-Y", strtotime("-7 days"));
         $fim = date("m-d-Y");
-        $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial='. $inicio .'&@dataFinalCotacao='. $fim .'&$top=1&$format=json&$select=cotacaoCompra'
+        $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\'03-23-2023\'&@dataFinalCotacao=\'03-30-2023\'&$top=1&$format=json&$select=cotacaoCompra,dataHoraCotacao';
+        
         $cotacao = json_decode(file_get_contents($url), true); // true para virar um array no lugar de objetic
         //padrao internalization
         $padrao = numfmt_create("pt_BR", numberFormatter::CURRENCY);
