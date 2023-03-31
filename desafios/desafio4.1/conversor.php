@@ -12,13 +12,16 @@
     <?php
         $inicio = date("m-d-Y", strtotime("-7 days"));
         $fim = date("m-d-Y");
-        $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\'03-23-2023\'&@dataFinalCotacao=\'03-30-2023\'&$top=1&$format=json&$select=cotacaoCompra,dataHoraCotacao';
+        $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\''.$inicio.'\'&@dataFinalCotacao=\''.$fim.'\'&$top=1&$format=json&$select=cotacaoCompra,dataHoraCotacao';
         
-        $cotacao = json_decode(file_get_contents($url), true); // true para virar um array no lugar de objetic
+        $dados = json_decode(file_get_contents($url), true); // true para virar um array no lugar de objetic
+        
+        $cotacao = $dados["value"][0]["cotacaoCompra"];
+        var_dump($cotacao);
         //padrao internalization
         $padrao = numfmt_create("pt_BR", numberFormatter::CURRENCY);
 
-        $number = $_GET["number"] ?? 0;
+        $number = $_GET["num"] ?? 0;
         $valor_convertido = $number / $cotacao;
 
         echo "<p>Seus ". numfmt_format_currency($padrao, $number, "BRL") ." equivalem a <strong>". numfmt_format_currency($padrao, $valor_convertido,"USD") ."</strong></p>"
