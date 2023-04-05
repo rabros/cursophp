@@ -22,6 +22,7 @@
                 "</ul>
             </p>"
         ?>
+        <button onclink:"javascript:history.go(-1)">Voltar</button>
     </main>  
 </body>
 </html>
