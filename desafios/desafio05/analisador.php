@@ -11,18 +11,19 @@
     <main>
         <h1>Analisador de número real</h1>
         <?php
-            $num = $_GET("num") ?? 0;
-            $int = (int)$num;
-            $real = $num - $int;
+         $num = $_GET["num"] ?? 0;
+         $int = (int)$num;
+         $deci = $num - $int;
 
-            echo "<p>Analisando o numero $num
+         echo "<p>Analisando o <strong>$num</strong></p>";
+         echo "<p>
                 <ul>
-                    <li> Parte inteira $int
-                    <li> Parte real" . number_format($real,3,",",".") .
-                "</ul>
-            </p>"
+                    <li>Inteiro: " . number_format($int, 0, ".", ",") . 
+                   "<li>Decimal: " . number_format($deci, 3, ".", ",") .
+               "</ul>
+              </p>";
         ?>
-        <button onclink:"javascript:history.go(-1)">Voltar</button>
+        <button onclick="javascript:history.go(-1)">Voltar</button>
     </main>  
 </body>
 </html>
