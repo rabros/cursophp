@@ -11,9 +11,9 @@
    <main>
         <?php
             $n1 = $_GET["n1"] ?? 0;
-            $p1 = $_GET["p1"] ?? 0;
+            $p1 = $_GET["p1"] ?? 1;
             $n2 = $_GET["n2"] ?? 0;
-            $p2 = $_GET["p2"] ?? 0;
+            $p2 = $_GET["p2"] ?? 1;
         ?>
 
         <h1>Calculando médias</h1>

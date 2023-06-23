@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio 10 - PHP</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php
         $ano_nasc = $_GET['ano_nasc'] ?? 2000;
-        $ano_atual = $GET['ano_atual'] ?? date['Y'];
+        $ano_atual = $GET['ano_atual'];
     ?>
     <main>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
