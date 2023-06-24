@@ -16,7 +16,7 @@
     <main>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
             <label for="number">Digite seu ano de nascimento</label>
-            <input type="number" name="ano_nasc" id="ano_nasc" min="1900" max="<?=$ano_atual?>" value="<?=$ano_nasc?>">
+            <input type="number" name="ano_nasc" id="ano_nasc" min="1900" max="<?=$ano_atual-1?>" value="<?=$ano_nasc?>">
             <label for="number">Quer saber sua idade em que ano? Atualmente estamos em <strong><?=$ano_atual?></strong></label>
             <input type="number" name="ano" id="ano" value="<?=$ano?>">
             <input type="submit" value="Calcular idade">
