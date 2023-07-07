@@ -8,25 +8,25 @@
 </head>
 <body>
     <?php
-        $sec = $_REQUEST['sec']?? 0;
+        $sec = $_GET['sec']?? 0;
     ?>
     <main>
         <h2>calculadora de Tempo</h2>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
             <label for="number">Qual é o total de segundos?</label>
-            <input type="number" name="sec" id="sec" step="1">
+            <input type="number" name="sec" id="sec" step="1" require value="<?=$sec?>">
             <input type="submit" value="Calcular">
         </form>
     </main>
     <section>
         <?php
             $sobra = $sec;
-            $semana = (int)($sobra / 604800);
-            $sobra = $sobra % 604800;
-            $dia = (int)($sobra / 86400);
-            $sobra = $sobra / 86400;
-            $hora = (int)($sobra / 3600);
-            $sobra = $sobra % 3600;
+            $semanas = (int)($sobra / 604_800);
+            $sobra = $sobra % 604_800;
+            $dia = (int)($sobra / 86_400);
+            $sobra = $sobra % 86_400;
+            $hora = (int)($sobra / 3_600);
+            $sobra = $sobra % 3_600;
             $minuto = (int)($sobra / 60);
             $sobra = $sobra % 60;
             $seg = $sobra;
